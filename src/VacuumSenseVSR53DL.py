@@ -358,7 +358,7 @@ class VacuumSenseVSR53DL:
                 self._port.flush()
         pack.parse_answer(message)
         if pack.access_code == AC.ERR_RX:
-            log.error(f'Error: {ErrorMessages.MSG[pack.data]}')
+            log.error(f'{ErrorMessages.MSG[pack.data]}')
         return message
 
     def _send_message(self, pack):
