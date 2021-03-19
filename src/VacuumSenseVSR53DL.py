@@ -15,6 +15,11 @@ class VacuumSenseVSR53DL:
     Thyracont's VSR53DL vacuum sensor RS458 interface
     """
     def __init__(self, device_label, address):
+        """
+        Constructor will initiate serial port communication in rs485 mode and define address for device
+        :param device_label: Device label assigned by the operating system when the device is connected
+        :param address: Defined by the address switch mounted in the device from 1 to 16
+        """
         self._port = serial.rs485.RS485(device_label,
                                     baudrate=115200,
                                     parity=serial.PARITY_NONE,
@@ -119,8 +124,7 @@ class VacuumSenseVSR53DL:
     def set_baud_rate(self, baud_rate):
         """
         Set the baud rate for data transmission
-        Value range: 9600, 14400, 19200, 28800, 38400, 57600, 115200 Bd
-        :param baud_rate:
+        :param baud_rate: Value possibilities: 9600, 14400, 19200, 28800, 38400, 57600, 115200 Bd
         :return:None
         """
         pack = ThyrCommPackage(self._address)
@@ -144,9 +148,8 @@ class VacuumSenseVSR53DL:
     def set_response_delay(self, response_delay):
         """
         Set the time delay between receiving a telegram and sending the answer.
-        Value range: 1 ... 99999 μs (default 5500 μs)
-        :param response_delay:
-        :return: response_delay
+        :param response_delay: Value range: 1 ... 99999 μs (default 5500 μs)
+        :return:
         """
         pack = ThyrCommPackage(self._address)
         pack.cmd = CMD.Response_Delay
@@ -168,7 +171,7 @@ class VacuumSenseVSR53DL:
     def set_display_unit(self, display_unit):
         """
         Set the display unit in the device's display
-        :param display_unit:
+        :param display_unit: Selectable amongst :Units.MBAR, Units.TORR and Units.HPA
         :return:
         """
         pack = ThyrCommPackage(self._address)
@@ -195,7 +198,7 @@ class VacuumSenseVSR53DL:
     def set_display_orientation(self, display_orientation):
         """
         Set the display orientation of the device NORMAL or ROTATED
-        :param display_orientation:
+        :param display_orientation: Selectable amongst Orientation.NORMAL and Orientation.ROTATED
         :return:
         """
         pack = ThyrCommPackage(self._address)
@@ -294,7 +297,7 @@ class VacuumSenseVSR53DL:
         """
         Set Relay 1 Status
         :return: relay_1_status
-        :param relay_status
+        :param relay_status: Not defined in discrete values yet, a string with the appropriate format has to used
         """
         pack = ThyrCommPackage(self._address)
         pack.cmd = CMD.Relay_1
@@ -306,7 +309,7 @@ class VacuumSenseVSR53DL:
         """
         Set Relay 2 Status
         :return: relay_2_status
-        :param relay_status
+        :param relay_status: Not defined in discrete values yet, a string with the appropriate format has to used
         """
         pack = ThyrCommPackage(self._address)
         pack.cmd = CMD.Relay_2
