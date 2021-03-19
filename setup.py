@@ -31,7 +31,7 @@ setup(
       author="Oscar Martínez",
       author_email="omartinez@ifae.es",
       license="CC0 1.0 Universal",
-      url="https://gitlab.pic.es/fcc_control/thyracont-vsr53dl-lib",
+      url="https://github.com/IFAEControl/pyvsr53dl",
       zip_safe=False,
       classifiers=[
                    "Development Status :: 4 - Beta",
