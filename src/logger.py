@@ -2,7 +2,7 @@ import logging
 
 # create logger
 log = logging.getLogger('VL53DL')
-log.setLevel(logging.INFO)
+log.setLevel(logging.ERROR)
 
 # create console handler and set level to debug
 ch = logging.StreamHandler()

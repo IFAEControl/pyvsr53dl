@@ -25,6 +25,7 @@ class TestVacuumSense(unittest.TestCase):
         self.assertAlmostEqual(vacuum_sense.get_device_version(), 2.0)
         self.assertAlmostEqual(vacuum_sense.get_firmware_version(), '0215')
         self.assertAlmostEqual(vacuum_sense.get_bootloader_version(), 2.0)
+        vacuum_sense.set_display_unit(Units.MBAR)
         self.assertAlmostEqual(vacuum_sense.get_display_unit(), Units.MBAR)
 
         vacuum_sense.close_communication()
