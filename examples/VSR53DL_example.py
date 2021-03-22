@@ -1,4 +1,4 @@
-from VacuumSenseVSR53DL import VacuumSenseVSR53DL
+from pyvsr53dl import VacuumSenseVSR53DL
 from AccessCodes import AccessCode as AC
 from Commands import Commands as CMD
 from DisplayModes import Units as Units

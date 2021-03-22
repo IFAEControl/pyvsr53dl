@@ -96,7 +96,7 @@ class VacuumSenseVSR53DL:
         pack = ThyrCommPackage(self._address)
         pack.cmd = CMD.Version_Device
         device_version = float(self._read_data_transaction(pack))
-        log.info(f'Firmware version: {device_version}')
+        log.info(f'Device version: {device_version}')
         return device_version
 
     def get_firmware_version(self):
