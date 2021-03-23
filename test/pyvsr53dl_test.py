@@ -18,7 +18,7 @@ class TestVacuumSense(unittest.TestCase):
         vacuum_sense = VacuumSenseVSR53DL(sensor_device_label, sensor_address)
         vacuum_sense.open_communication()
 
-        self.assertAlmostEqual(vacuum_sense.get_device_type(), 'VSR205')
+        self.assertAlmostEqual(vacuum_sense.get_device_type(), 'VSR205') 
         self.assertAlmostEqual(vacuum_sense.get_product_name(), 'VSR53DL')
         self.assertAlmostEqual(vacuum_sense.get_serial_number_device(), '20002583')
         self.assertAlmostEqual(vacuum_sense.get_serial_number_head(), '20002583')
