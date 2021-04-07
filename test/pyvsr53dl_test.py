@@ -1,12 +1,15 @@
 import unittest
 
-from src.DisplayModes import Units
-from src.pyvsr53dl import PyVSR53DL
+from pyvsr53dl.DisplayModes import Units
+from pyvsr53dl.vsr53dl import PyVSR53DL
+from pyvsr53dl.logger import log
+import logging
 
 class TestVacuumSense(unittest.TestCase):
 
     def test_device_query(self):
-        from src.sys import dev_tty
+        log.setLevel(logging.INFO)
+        from pyvsr53dl.sys import dev_tty
         sensor_address = 1
         vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
         vacuum_sense.open_communication()

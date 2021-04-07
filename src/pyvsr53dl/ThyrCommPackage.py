@@ -1,7 +1,7 @@
-from logger import log as log
-from AccessCodes import AccessCode as AC
-from Commands import Commands as CMD
-from DisplayModes import Units as Units
+from pyvsr53dl.logger import log as log
+from pyvsr53dl.AccessCodes import AccessCode as AC
+from pyvsr53dl.Commands import Commands as CMD
+from pyvsr53dl.DisplayModes import Units as Units
 # from DISPLAY import Orientation as Orientation
 
 class ThyrCommPackage():

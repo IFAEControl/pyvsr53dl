@@ -1,7 +1,10 @@
-from src.pyvsr53dl import PyVSR53DL
+from pyvsr53dl.vsr53dl import PyVSR53DL
+from pyvsr53dl.logger import log
 import csv
 from datetime import datetime
+import logging
 
+log.setLevel(logging.ERROR)
 
 def get_now_timestamp_str():
     now = datetime.now()
@@ -15,12 +18,12 @@ def open_file():
     return writer
 
 def stress_test():
-    from src.sys import dev_tty
+    from pyvsr53dl.sys import dev_tty
     sensor_address = 1
     vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
     vacuum_sense.open_communication()
     writer = open_file()
-    for run in range(1000):
+    for run in range(100000000):
         measurement = vacuum_sense.get_measurement_value()
         print(f"RUN #{run} measurement: {measurement}mbar")
         writer.writerow([run, measurement, get_now_timestamp_str()])

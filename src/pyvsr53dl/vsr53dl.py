@@ -1,13 +1,13 @@
 import serial
 import serial.rs485
 import re
-from logger import log as log
-from ThyrCommPackage import ThyrCommPackage
-from AccessCodes import AccessCode as AC
-from Commands import Commands as CMD
-from DisplayModes import Units as Units
-from DisplayModes import Orientation as Orientation
-import ErrorMessages
+from pyvsr53dl.ThyrCommPackage import ThyrCommPackage
+from pyvsr53dl.AccessCodes import AccessCode as AC
+from pyvsr53dl.Commands import Commands as CMD
+from pyvsr53dl.DisplayModes import Units as Units
+from pyvsr53dl.DisplayModes import Orientation as Orientation
+from pyvsr53dl.logger import log
+from pyvsr53dl import ErrorMessages
 
 
 class PyVSR53DL:
@@ -375,7 +375,10 @@ class PyVSR53DL:
 
 if __name__ == '__main__':
 
-    from src.sys import dev_tty
+    from pyvsr53dl.sys import dev_tty
+    import logging
+
+    log.setLevel(logging.INFO)
 
     sensor_address = 1
     vacuum_sense = PyVSR53DL(dev_tty, sensor_address)

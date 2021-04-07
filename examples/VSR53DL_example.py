@@ -1,9 +1,9 @@
 from src.pyvsr53dl import PyVSR53DL
-from src.DisplayModes import Units as Units
-from src.DisplayModes import Orientation as Orientation
+from pyvsr53dl.DisplayModes import Units as Units
+from pyvsr53dl.DisplayModes import Orientation as Orientation
 
 if __name__ == '__main__':
-    from src.sys import dev_tty
+    from pyvsr53dl.sys import dev_tty
     sensor_address = 1
     vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
     vacuum_sense.open_communication()
