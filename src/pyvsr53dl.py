@@ -10,7 +10,7 @@ from DisplayModes import Orientation as Orientation
 import ErrorMessages
 
 
-class VacuumSenseVSR53DL:
+class PyVSR53DL:
     """
     Thyracont's VSR53DL vacuum sensor RS458 interface
     """
@@ -374,21 +374,11 @@ class VacuumSenseVSR53DL:
         return message
 
 if __name__ == '__main__':
-    import platform
+
+    from src.sys import dev_tty
 
     sensor_address = 1
-    sensor_device_label = None
-    log.info(f"I'm on {platform.system()}")
-    if platform.system() == 'Darwin':
-        sensor_device_label = '/dev/ttyUSB0'
-    elif platform.system() == 'Windows':
-        sensor_device_label = 'COM6'
-    elif platform.system() == 'Linux':
-        sensor_device_label = '/dev/ttyUSB0'
-    else:
-        log.info("Fuck, don't know the platform I'm running on...")
-
-    vacuum_sense = VacuumSenseVSR53DL(sensor_device_label, sensor_address)
+    vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
     vacuum_sense.open_communication()
     # vacuum_sense.restart_device()
     # vacuum_sense.set_baud_rate(115200)

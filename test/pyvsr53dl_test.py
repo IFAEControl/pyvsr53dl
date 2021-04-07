@@ -1,7 +1,7 @@
 import unittest
 
 from DisplayModes import Units
-from pyvsr53dl import VacuumSenseVSR53DL
+from pyvsr53dl import PyVSR53DL
 
 class TestVacuumSense(unittest.TestCase):
 
@@ -15,7 +15,7 @@ class TestVacuumSense(unittest.TestCase):
             sensor_device_label = 'COM6'
         elif platform.system() == 'Linux':
             sensor_device_label = '/dev/ttyUSB0'
-        vacuum_sense = VacuumSenseVSR53DL(sensor_device_label, sensor_address)
+        vacuum_sense = PyVSR53DL(sensor_device_label, sensor_address)
         vacuum_sense.open_communication()
 
         self.assertAlmostEqual(vacuum_sense.get_device_type(), 'VSR205') 

@@ -1,28 +1,12 @@
-from pyvsr53dl import VacuumSenseVSR53DL
-from AccessCodes import AccessCode as AC
-from Commands import Commands as CMD
+from src.pyvsr53dl import PyVSR53DL
 from DisplayModes import Units as Units
 from DisplayModes import Orientation as Orientation
-from logger import log as log
-import platform
 
 if __name__ == '__main__':
+    from src.sys import dev_tty
     sensor_address = 1
-    sensor_device_label = None
-    log.info(f"I'm on {platform.system()}")
-    if platform.system() == 'Darwin':
-        sensor_device_label = '/dev/ttyUSB0'
-    elif platform.system() == 'Windows':
-        sensor_device_label = 'COM6'
-    elif platform.system() == 'Linux':
-        sensor_device_label = '/dev/ttyUSB0'
-    else:
-        log.info("Fuck, don't know the platform I'm running on...")
-
-    vacuum_sense = VacuumSenseVSR53DL(sensor_device_label, sensor_address)
+    vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
     vacuum_sense.open_communication()
-    # vacuum_sense.restart_device()
-    # vacuum_sense.set_baud_rate(115200)
     vacuum_sense.get_device_type()
     vacuum_sense.get_product_name()
     vacuum_sense.get_serial_number_device()
