@@ -1,6 +1,6 @@
 from src.pyvsr53dl import PyVSR53DL
-from DisplayModes import Units as Units
-from DisplayModes import Orientation as Orientation
+from src.DisplayModes import Units as Units
+from src.DisplayModes import Orientation as Orientation
 
 if __name__ == '__main__':
     from src.sys import dev_tty

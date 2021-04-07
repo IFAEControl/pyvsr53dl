@@ -380,8 +380,7 @@ if __name__ == '__main__':
     sensor_address = 1
     vacuum_sense = PyVSR53DL(dev_tty, sensor_address)
     vacuum_sense.open_communication()
-    # vacuum_sense.restart_device()
-    # vacuum_sense.set_baud_rate(115200)
+
     vacuum_sense.get_device_type()
     vacuum_sense.get_product_name()
     vacuum_sense.get_serial_number_device()
