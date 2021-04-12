@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/pyvsr53dl/AccessCodes.py
+src/pyvsr53dl/Commands.py
+src/pyvsr53dl/DisplayModes.py
+src/pyvsr53dl/ErrorMessages.py
+src/pyvsr53dl/ThyrCommPackage.py
+src/pyvsr53dl/__init__.py
+src/pyvsr53dl/logger.py
+src/pyvsr53dl/sys.py
+src/pyvsr53dl/vsr53dl.py
+src/pyvsr53dl.egg-info/PKG-INFO
+src/pyvsr53dl.egg-info/SOURCES.txt
+src/pyvsr53dl.egg-info/dependency_links.txt
+src/pyvsr53dl.egg-info/not-zip-safe
+src/pyvsr53dl.egg-info/top_level.txt

@@ -29,7 +29,7 @@ setuptools.setup(
       long_description=long_description,
       install_requires=[''],
       python_requires='>=3',
-      provides=[""],
+      provides=["pyvsr53dl"],
       author="Oscar Martínez",
       author_email="omartinez@ifae.es",
       license="CC0 1.0 Universal",
