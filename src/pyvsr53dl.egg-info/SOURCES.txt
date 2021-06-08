@@ -14,4 +14,5 @@ src/pyvsr53dl.egg-info/PKG-INFO
 src/pyvsr53dl.egg-info/SOURCES.txt
 src/pyvsr53dl.egg-info/dependency_links.txt
 src/pyvsr53dl.egg-info/not-zip-safe
+src/pyvsr53dl.egg-info/requires.txt
 src/pyvsr53dl.egg-info/top_level.txt

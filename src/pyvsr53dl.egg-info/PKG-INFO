@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pyvsr53dl
-Version: 0.1.0
+Version: 0.1.1
 Summary: Python Library to interface with Thyracont's VSR53DL Vacuum Sensor through RS458 interface
 Home-page: https://github.com/IFAEControl/pyvsr53dl
 Author: Oscar Martínez

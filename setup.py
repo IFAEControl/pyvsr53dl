@@ -23,11 +23,11 @@ with open(os.path.join(here, 'README.md')) as fh:
 # print(find_packages(exclude=('tests',)))
 setuptools.setup(
       name="pyvsr53dl",
-      version="0.1.0",
+      version="0.1.1",
       description="Python Library to interface with Thyracont's VSR53DL Vacuum Sensor through RS458 interface",
       long_description_content_type="text/markdown",
       long_description=long_description,
-      install_requires=[''],
+      install_requires=['pyserial'],
       python_requires='>=3',
       provides=["pyvsr53dl"],
       author="Oscar Martínez",
